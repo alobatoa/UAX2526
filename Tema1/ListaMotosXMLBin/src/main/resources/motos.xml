@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <motos>
     <moto>
-        <cilindrada>600</cilindrada>
-        <marca>Honda</marca>
-        <modelo>CBR</modelo>
+        <cilindrada>1234</cilindrada>
+        <marca>Ducati</marca>
+        <modelo>Supermotar</modelo>
+    </moto>
+    <moto>
+        <cilindrada>34</cilindrada>
+        <marca>Aprilia </marca>
+        <modelo>Y67</modelo>
     </moto>
 </motos>

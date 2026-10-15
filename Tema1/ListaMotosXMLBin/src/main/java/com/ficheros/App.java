@@ -33,7 +33,10 @@ public class App {
             switch (opcion) {
                 case 1:
                     List<moto> motosBin = pedirMotos(sc);
-                    binService.guardarBinario(motosBin);
+                    binService.guardarBinario(motosBin); //Así se sobreescribe el contenido
+                    /*List<moto> motosBin = binService.leerBinario();
+                    motosBin.addAll(pedirMotos(sc));
+                    binService.guardarBinario(motosBin);*/ //Así se escribe al final del fichero
                     break;
                 case 2:
                     List<moto> motosLeidasBin = binService.leerBinario();
@@ -42,11 +45,14 @@ public class App {
                 case 3:
                     motoList motosXml = new motoList();
                     motosXml.setMotos(pedirMotos(sc));
-                    xmlService.guardarXml(motosXml);
+                    xmlService.guardarXml(motosXml); //Crea una lista nueva y sobreescribe el fichero
+                    /*motoList motosLeidasXml = xmlService.leerXml();
+                    motosLeidasXml.getMotos().addAll(pedirMotos(sc));
+                    xmlService.guardarXml(motosLeidasXml);*/ //Guarda motos a continuación del fichero, proque pide todas antes y las inserta todas a la vez
                     break;
                 case 4:
-                    motoList motosLeidasXml = xmlService.leerXml();
-                    motosLeidasXml.getMotos().forEach(System.out::println);
+                    motoList motosLeidas = xmlService.leerXml();
+                    motosLeidas.getMotos().forEach(System.out::println);
                     break;
                 case 0:
                     System.out.println("Saliendo del programa...");
